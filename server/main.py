@@ -1,8 +1,7 @@
 import logging
 from flask import Flask, request, jsonify
-from recognition.image_recognition import recognize
-from recognition.text_recognition import process_user_input
-from models import sights
+
+from recognition import process_user_input
 from recognition import recognize
 from models import sights 
 
