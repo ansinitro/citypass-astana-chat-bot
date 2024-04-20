@@ -1,0 +1,6 @@
+.env
+env
+
+# bot 
+bot/env
+bot/.env
