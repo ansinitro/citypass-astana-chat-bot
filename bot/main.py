@@ -43,13 +43,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         [KeyboardButton(text="citypass", web_app=WebAppInfo(url="https://astana.citypass.kz/ru/kupit-citypass/"))],
     ]
     
-    await update.message.reply_text("⭐️ Наш приоритет дать возможность купить любую игровую валюту по лучшим ценам, а также предоставить вам скорейшее получение доната с гарантией безопасности вашего аккаунта 💫", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True))
+    await update.message.reply_text("hihihih", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True))
 
 
 async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
     response = requests.get(f'https://api.telegram.org/bot{BOT_TOKEN}/getFile?file_id={update.message.photo[0].file_id}')
+    print(update.message)
 
-    # Check if the request was successful (status code 200)
     if response.ok:
         json_data = response.json()
         file_path = json_data.get('result').get('file_path')
@@ -60,7 +60,7 @@ async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def main() -> None:
     """Start the bot."""
     # Create the Application and pass it your bot's token.
-    application = Application.builder().token("7017134946:AAGKaUnGw4Np_7ByLSo3fbznOSant2yNYAs").build()
+    application = Application.builder().token(BOT_TOKEN).build()
     application.add_handler(MessageHandler(filters.ALL, location))
     application.add_handler(MessageHandler(filters.LOCATION, location))
     application.add_handler(MessageHandler(filters.PHOTO, photo))
