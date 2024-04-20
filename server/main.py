@@ -1,7 +1,12 @@
 import logging
 from flask import Flask, request, jsonify
-from recognition.image_recognition import recognize
-from models import sights
+from recognition import recognize
+from models import sights 
+
+# from dotenv import load_dotenv
+# load_dotenv()
+
+
 
 app = Flask(__name__)
 
@@ -19,7 +24,7 @@ def recognize_image():
         if image_file.filename == '':
             return "No image selected", 400
 
-        image_path = "/tmp/uploaded_image.jpg"
+        image_path = "./tmp/uploaded_image.jpg"
         image_file.save(image_path)
 
         class_name, conf_score = recognize(image_path)
