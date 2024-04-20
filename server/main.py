@@ -1,6 +1,7 @@
 import logging
 from flask import Flask, request, jsonify
 from recognition.image_recognition import recognize
+from models import sights
 
 app = Flask(__name__)
 
@@ -28,10 +29,28 @@ def recognize_image():
         logging.error(f"An error occurred: {e}")
         return "Internal Server Error", 500
 
+@app.route("/sight/map")
+def get_map():
+    request_body = request.get_json()
+    sight = sights[request_body.get("sight_name")]
+    link = f'https://2gis.kz/astana/geo/{sight["2gis_id"]}/{sight["2gis_coord_f"]}%2C{sight["2gis_coord_s"]}'
+    return jsonify({'2gis_link': link})
 
-@app.route("/hello/<name>")
-def say_hello(name):
-    return jsonify({"message": f"Hello {name}"})
+@app.route("/sight/route")
+def get_route():
+    request_body = request.get_json()
+    sight = sights[request_body.get("sight_name")]
+    longitude = request_body.get('longitude')
+    latitude = request_body.get('latitude')
+    link = f'https://2gis.kz/astana/directions/points/{longitude}%2C{latitude}%7C{sight["2gis_coord_f"]}%2C{sight["2gis_coord_s"]}%3B{sight["2gis_id"]}'
+    return jsonify({'2gis_route': link})
+
+
+@app.route("/sight/<name>")
+def get_sight(name: str):
+    return jsonify(sights[name.lower()])
+
+
 
 @app.route("/", methods=["POST"])
 def post_root():

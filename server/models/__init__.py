@@ -1,2 +1,3 @@
-from .Coordinates import Coordinates
-from .RequestBody import RequestBody
+from .coordinates import Coordinates
+from .request_body import RequestBody
+from .sight_information import sights

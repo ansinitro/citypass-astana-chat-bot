@@ -1,6 +1,6 @@
 from typing import Union
 from pydantic import BaseModel
-from .Coordinates import Coordinates
+from .coordinates import Coordinates
 
 
 class RequestBody(BaseModel):

@@ -43,6 +43,6 @@ def recognize(image_path):
     confidence_score = prediction[0][index]
 
     # Print prediction and confidence score
-    print("Class:", class_name[2:], end="")
+    print("Class:", class_name[2:-1])
     print("Confidence Score:", confidence_score)
-    return class_name, confidence_score
+    return class_name[2:-1], confidence_score

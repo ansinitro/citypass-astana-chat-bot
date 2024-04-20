@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="046be242-6c9b-4d50-aef2-1ee5c71ddf39" name="Changes" comment="" />
+    <list default="true" id="046be242-6c9b-4d50-aef2-1ee5c71ddf39" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/models/Coordinates.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/RequestBody.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/koskakos/Desktop/Petyhon/gds-hahaton",
+    "last_opened_file_path": "C:/Users/koskakos/Desktop/Petyhon/gds-hahaton/server",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
@@ -67,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713605687426</updated>
       <workItem from="1713605744061" duration="2004000" />
+      <workItem from="1713618801680" duration="14000" />
     </task>
     <servers />
   </component>
