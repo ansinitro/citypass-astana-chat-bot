@@ -1,6 +1,7 @@
 import logging
 from flask import Flask, request, jsonify
 from recognition.image_recognition import recognize
+from recognition.text_recognition import process_user_input
 from models import sights
 
 app = Flask(__name__)
@@ -29,12 +30,21 @@ def recognize_image():
         logging.error(f"An error occurred: {e}")
         return "Internal Server Error", 500
 
+
 @app.route("/sight/map")
 def get_map():
     request_body = request.get_json()
     sight = sights[request_body.get("sight_name")]
     link = f'https://2gis.kz/astana/geo/{sight["2gis_id"]}/{sight["2gis_coord_f"]}%2C{sight["2gis_coord_s"]}'
     return jsonify({'2gis_link': link})
+
+
+@app.route("/recognize_input")
+def recognize_input():
+    request_body = request.get_json()
+    user_input = request_body.get("user_input")
+    language, sug_input = process_user_input(user_input)
+    return jsonify({'language': language, 'suggested_input': sug_input})
 
 @app.route("/sight/route")
 def get_route():
