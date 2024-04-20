@@ -55,23 +55,34 @@ def download_file(url, destination):
 
 def send_photo(url, photo_path):
     with open(photo_path, 'rb') as file:
-        files = {'photo': file}
+        files = {'image': file}
         response = requests.post(url, files=files)
+    try:
+        json_data = response.json()
+    except ValueError:
+        json_data = response
         
     if response.status_code == 200:
         print("Photo sent successfully")
     else:
         print("Failed to send photo")
+    return json_data
+
+
 
 async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
     response = requests.get(f'https://api.telegram.org/bot{BOT_TOKEN}/getFile?file_id={update.message.photo[len(update.message.photo) - 1].file_id}')
-
     if response.ok:
         json_data = response.json()
         file_path = json_data.get('result').get('file_path')
-    download_file(f'https://api.telegram.org/file/bot{BOT_TOKEN}/{file_path}', "./1.jpg")
-    send_photo('http://10.202.5.199:8000/recognize_image', './1.jpg')
-    await context.bot.send_message(LOG_CHANNEL, f'https://api.telegram.org/file/bot{BOT_TOKEN}/{file_path}')
+        print(file_path)
+        download_file(f'https://api.telegram.org/file/bot{BOT_TOKEN}/{file_path}', "./1.jpg")
+
+    message_data = send_photo('http://localhost:8000/recognize_image', './1.jpg')
+    message_text = str(message_data)
+    # await context.bot.send_message(LOG_CHANNEL, message_text)
+    await update.message.reply_text(message_text)
+
 
 
 def main() -> None:
