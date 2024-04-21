@@ -52,3 +52,26 @@ sights = {
         'address': 'Астана, пр. Кабанбай батыр, 62'
     }
 }
+
+sights_names = {
+    'expo': {
+        'name_ru': 'Музей энергии будущего «Нур-Алем» (ЭКСПО)',
+        'name_kz': '«Нұр-Әлем» Болашақ энергиясы мұражайы (ЭКСПО)',
+        'name_en': '«Nur-Alem» Future Energy Museum (EXPO)',
+    },
+    'khan-shatyr': {
+        'name_ru': 'ТРЦ «Хан Шатыр»',
+        'name_kz': '«Хан Шатыр» СОО',
+        'name_en': '«Khan Shatyr» SEC',
+    },
+    'baiterek': {
+        'name_ru': 'Монумент «Астана-Байтерек»',
+        'name_kz': '«Астана-Бәйтерек» монументі',
+        'name_en': '«Astana-Baiterek» Monument',
+    },
+    'mega-silk-way': {
+        'name_ru': 'ТРЦ «MEGA Silk Way»',
+        'name_kz': '«MEGA Silk Way» СОО',
+        'name_en': '«MEGA Silk Way» SOO',
+    }
+}

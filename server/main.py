@@ -2,7 +2,7 @@ import logging
 from flask import Flask, request, jsonify
 from recognition.image_recognition import recognize
 from recognition.text_recognition import process_user_input
-from models import sights
+from models import sights, sights_names
 
 app = Flask(__name__)
 
@@ -25,7 +25,7 @@ def recognize_image():
 
         class_name, conf_score = recognize(image_path)
 
-        return jsonify({"message": class_name})
+        return jsonify({"id": class_name, 'names': sights_names[class_name]})
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         return "Internal Server Error", 500
