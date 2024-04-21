@@ -7,7 +7,13 @@ from telegram.ext import ContextTypes
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     id = update.message.from_user.id
-    
+    lang = update.message.from_user.language_code
+    if lang == 'en':
+      hello = 'Write down the name of the attraction or upload a photo, and I will help you set a route or show it on the map.'
+    elif lang == 'kz':
+      hello = 'Көрікті орынның атын жазыңыз немесе фотосуретті жүктеңіз, мен сізге маршрут құруға көмектесемін немесе оны картада көрсетемін.'
+    else:
+      hello = 'Напиши название достопримечательности или загрузи фото, и я помогу тебе построить маршрут или покажу её на карте.'
     if not await DB.is_user_exist(id):
         await DB.add_user(id)
         if LOG_CHANNEL:
@@ -21,4 +27,4 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         [KeyboardButton(text="Купить Билеты Citypass", web_app=WebAppInfo(url="https://astana.citypass.kz/ru/kupit-citypass/"))],
     ]
     
-    await update.message.reply_text("hihihih", reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True))
+    await update.message.reply_text(hello, reply_markup=ReplyKeyboardMarkup(keyboard, resize_keyboard=True))

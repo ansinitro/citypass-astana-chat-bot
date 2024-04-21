@@ -20,7 +20,7 @@ def send_photo(url, photo_path):
     if response.status_code == 200:
         response_json = response.json()
         print(response_json)
-        return response_json.get('message')
+        return response_json
     else:
         print("Failed to send photo")
         return None
