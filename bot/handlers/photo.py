@@ -11,7 +11,7 @@ async def photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lang = update.message.from_user.language_code
     if lang == 'en':
         get_info = 'Receive information'
-    elif lang == 'kz':
+    elif lang == 'kk':
         get_info = 'Ақпарат алу'
     else:
         get_info = 'Получить Информацию'

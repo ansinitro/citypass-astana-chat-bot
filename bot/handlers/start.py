@@ -10,7 +10,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     lang = update.message.from_user.language_code
     if lang == 'en':
       hello = 'Write down the name of the attraction or upload a photo, and I will help you set a route or show it on the map.'
-    elif lang == 'kz':
+    elif lang == 'kk':
       hello = 'Көрікті орынның атын жазыңыз немесе фотосуретті жүктеңіз, мен сізге маршрут құруға көмектесемін немесе оны картада көрсетемін.'
     else:
       hello = 'Напиши название достопримечательности или загрузи фото, и я помогу тебе построить маршрут или покажу её на карте.'

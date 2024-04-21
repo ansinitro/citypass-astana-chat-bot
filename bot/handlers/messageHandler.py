@@ -18,7 +18,7 @@ async def messageHandler(update: Update, context: ContextTypes.DEFAULT_TYPE):
       context.user_data['last_searched_sight'] = suggested_input
       if lang == 'en':
         name, description, address, ticket_price, reach, show_map, buy_ticket, tour, no_info = 'Name', 'Description', 'Address', 'Ticket Price', 'Reach to', 'Show Map', 'Buy Tickets', '3D Tour', 'No Info'
-      elif lang == 'kz':
+      elif lang == 'kk':
         name, description, address, ticket_price, reach, show_map, buy_ticket, tour, no_info = "Аты", "Сипаттамасы", "Мекен-жайы", "Билет құны","Жету", "Картаны көрсету", "Билеттерді сатып алу", "3D-тур", 'Ақпарат Жоқ'
       else:
         name, description, address, ticket_price, reach, show_map, buy_ticket, tour, no_info = "Название", "Описание", "Адрес", "Стоимость билета", "Добраться до", "Показать карту", "Купить билеты", "3D-тур", 'Нет информации'

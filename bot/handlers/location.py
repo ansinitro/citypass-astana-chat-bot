@@ -19,7 +19,7 @@ async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(context.user_data['last_searched_sight'], link)
     if lang == 'en':
         reach = 'Reach to'
-    elif lang == 'kz':
+    elif lang == 'kk':
         reach = "Жету"
     else:
         reach = "Добраться до"
