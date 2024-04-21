@@ -36,19 +36,3 @@ class Database:
         await self.col.delete_many({"id": int(user_id)})
 
 DB = Database(DB_URL, DB_NAME)
-
-
-
-
-
-
-
-
-
-#         unique_id = "20220318120530123456"  # YYYYMMDDHHMMSSffffff format
-
-# # Parse the unique ID string into a datetime object
-# parsed_date = datetime.datetime.strptime(unique_id, "%Y%m%d%H%M%S%f")
-
-# # Extract the date from the datetime object
-# date = parsed_date.date()
