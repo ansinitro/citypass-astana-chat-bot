@@ -8,7 +8,14 @@ from telegram.ext import ContextTypes
 
 async def photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     response = requests.get(f'https://api.telegram.org/bot{BOT_TOKEN}/getFile?file_id={update.message.photo[0].file_id}')
-
+    lang = update.message.from_user.language_code
+    if lang == 'en':
+        get_info = 'Receive information'
+    elif lang == 'kz':
+        get_info = 'Ақпарат алу'
+    else:
+        get_info = 'Получить Информацию'
+    
     # Check if the request was successful (status code 200)
     if response.ok:
         json_data = response.json()
@@ -18,4 +25,4 @@ async def photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     city_names = city_names['names']
     await context.bot.send_message(context._chat_id, city_names[f'name_{update.message.from_user.language_code}'], 
-                                   reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Получить Информацию", callback_data='/sight/<name>')]]))
+                                   reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(get_info, callback_data='/sight/<name>')]]))
