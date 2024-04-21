@@ -10,7 +10,9 @@ sights = {
         '2gis_id': '70000001032366027',
         '2gis_coord_f': '71.426044',
         '2gis_coord_s': '51.101742',
-        'address': 'Астана, Орынбор , 55',
+        'address_ru': 'Астана, Орынбор, 55',
+        'address_kz': 'Астана, Орынбор, 55',
+        'address_en': 'Astana, Orynbor, 55',
         '3d_tour':'https://www.google.com/maps/@51.0892513,71.4160517,3a,82.2y,98.64h,1t/data=!3m7!1e1!3m5!1sAF1QipMsfTMFcHExiZhwEdhi-CAzWVo7Ufe4GNr-nJqB!2e10!3e12!7i12000!8i6000?entry=ttu',
     },
     'khan-shatyr': {
@@ -24,7 +26,9 @@ sights = {
         '2gis_id': '70000001018125300',
         '2gis_coord_f': '71.40356',
         '2gis_coord_s': '51.132528',
-        'address': ' Астана, ул. Туран 37',
+        'address_ru': ' Астана, ул. Туран 37',
+        'address_kz': ' Астана, ул. Туран 37',
+        'address_en': ' Astana, st. Turan 37',
         '3d_tour': 'https://www.google.com/maps/@51.1321314,71.4059226,3a,75y,267.28h,111.56t/data=!3m8!1e1!3m6!1sAF1QipOx40ga6pjdW5XBJiggVkM1odXkI_aWpOKTKKXN!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOx40ga6pjdW5XBJiggVkM1odXkI_aWpOKTKKXN%3Dw203-h100-k-no-pi-0-ya56.543896-ro-0-fo100!7i12868!8i6434?entry=ttu'
     },
     'baiterek': {
@@ -38,7 +42,9 @@ sights = {
         '2gis_id': '70000001021365759',
         '2gis_coord_f': '71.430389',
         '2gis_coord_s': '51.128314',
-        'address': 'Астана, Нуржол бульвар, 14',
+        'address_ru': 'Астана, Нуржол бульвар, 14',
+        'address_kz': 'Астана, Нуржол бульвары, 14',
+        'address_en': 'Astana, Nurzhol Boulevard, 14',
         '3d_tour': 'https://www.google.com/maps/@51.1283,71.4305,3a,82.2y,87.99h,89.58t/data=!3m7!1e1!3m5!1sAF1QipM7b1bCy0DHbvK61rbd0j-NKfMlmwJPpb5l4it2!2e10!3e12!7i6080!8i3040?entry=ttu'
     },
     'mega-silk-way': {
@@ -52,7 +58,9 @@ sights = {
         '2gis_id': '70000001026995330',
         '2gis_coord_f': '71.405554',
         '2gis_coord_s': '51.089348',
-        'address': 'Астана, пр. Кабанбай батыр, 62',
+        'address_ru': 'Астана, пр. Кабанбай батыр, 62',
+        'address_kz': 'Астана, пр. Қабанбай батыр, 62',
+        'address_en': 'Astana, Kabanbai Batyr Ave., 62',
         '3d_tour':'https://www.google.com/maps/@51.0889579,71.4113655,3a,75y,246.91h,97.37t/data=!3m7!1e1!3m5!1srB7F7c9leFLyVhJKaF9v8A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DrB7F7c9leFLyVhJKaF9v8A%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D275.73532%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu'
     }
 }
