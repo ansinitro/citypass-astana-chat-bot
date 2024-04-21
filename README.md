@@ -21,8 +21,15 @@ CityPass Astana is a Telegram bot designed to assist tourists and residents in n
 - `python-telegram-bot`: Library to handle interactions with the Telegram Bot API.
 - `flask`: Serves the backend application and handles HTTP requests.
 - `numpy`: Supports data manipulation and serves as a backbone for other libraries handling more complex mathematical operations.
-- `opencv-python`: Used for image processing tasks required in place recognition.
-- `tensorflow` or `pytorch`: Used for implementing and running machine learning models.
+- `tensorflow`: For implementing and running machine learning models.
+- `keras`: High-level neural networks API, running on top of TensorFlow.
 - `pillow`: For image file manipulations.
-- `requests`: Simplifies HTTP requests to external APIs or between the bot and the backend.
+- `pydantic`: Data validation and settings management using python type annotations.
+- `fuzzywuzzy`: Python library for string matching.
+
+## Prerequisites
+
+- Python 3.8-3.11
+- pip for package installation
+
 
