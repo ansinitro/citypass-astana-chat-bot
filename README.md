@@ -27,9 +27,9 @@ CityPass Astana is a Telegram bot designed to assist tourists and residents in n
 - `pydantic`: Data validation and settings management using python type annotations.
 - `fuzzywuzzy`: Python library for string matching.
 
+Install the dependencies by this command ```pip install -r requirements.txt``` 
+
 ## Prerequisites
 
 - Python 3.8-3.11
 - pip for package installation
-
-
