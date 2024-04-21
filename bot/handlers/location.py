@@ -6,7 +6,7 @@ from telegram.ext import ContextTypes
 import requests
 
 async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    
+    lang = update.message.from_user.language_code
     json_info = {
         'sight_name':context.user_data['last_searched_sight'],
         'longitude': update.message.location.longitude,
@@ -17,7 +17,13 @@ async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if response.status_code == 200:
         link = response.json()['2gis_route']
     print(context.user_data['last_searched_sight'], link)
-    
+    if lang == 'en':
+        reach = 'Reach to'
+    elif lang == 'kz':
+        reach = "Жету"
+    else:
+        reach = "Добраться до"
+
     await context.bot.send_message(context._chat_id,
-                                   f'Проехать до {context.user_data["last_searched_sight"]}',
+                                   f'{reach} {context.user_data["last_searched_sight"]}',
                                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Проехать", web_app=WebAppInfo(url=link))]]))
