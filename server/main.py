@@ -20,9 +20,10 @@ def recognize_image():
         if image_file.filename == '':
             return "No image selected", 400
 
-        image_path = "/tmp/uploaded_image.jpg"
+        image_path = "./tmp/uploaded_image.jpg"
+        print(type(image_file))
         image_file.save(image_path)
-
+        print(type(image_file))
         class_name, conf_score = recognize(image_path)
 
         return jsonify({"message": class_name})
