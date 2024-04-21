@@ -16,6 +16,7 @@ async def messageHandler(update: Update, context: ContextTypes.DEFAULT_TYPE):
          await context.bot.send_message(context._chat_id, "Я вас не понял, ввидите свой запрос заново).")
          return
       context.user_data['last_searched_sight'] = suggested_input
+      suggested_input = suggested_input['id']
       if lang == 'en':
         name, description, address, ticket_price, reach, show_map, buy_ticket, tour, no_info = 'Name', 'Description', 'Address', 'Ticket Price', 'Reach to', 'Show Map', 'Buy Tickets', '3D Tour', 'No Info'
       elif lang == 'kk':

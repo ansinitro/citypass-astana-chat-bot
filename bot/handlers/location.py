@@ -8,7 +8,7 @@ import requests
 async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lang = update.message.from_user.language_code
     json_info = {
-        'sight_name':context.user_data['last_searched_sight'],
+        'sight_name':context.user_data['last_searched_sight']['id'],
         'longitude': update.message.location.longitude,
         'latitude' : update.message.location.latitude
     }
@@ -25,5 +25,5 @@ async def location(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reach = "Добраться до"
 
     await context.bot.send_message(context._chat_id,
-                                   f'{reach} {context.user_data["last_searched_sight"]}',
+                                   f'{reach} {context.user_data["last_searched_sight"]["names"][f"name_{lang}"]}',
                                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Проехать", web_app=WebAppInfo(url=link))]]))

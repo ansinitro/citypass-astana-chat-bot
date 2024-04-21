@@ -45,7 +45,7 @@ def recognize_input():
     request_body = request.get_json()
     user_input = request_body.get("user_input")
     language, sug_input = process_user_input(user_input)
-    return jsonify({'language': language, 'suggested_input': sug_input})
+    return jsonify({'language': language, 'suggested_input': {'id': sug_input, 'names':sights_names[sug_input]}})
 
 @app.route("/sight/route")
 def get_route():

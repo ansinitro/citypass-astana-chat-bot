@@ -11,7 +11,7 @@ async def callbackRecognize(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # update.message.from_user.language_code == 'en'
     if query.data == '/sight/<name>':
-      response = requests.get(f'http://localhost:8000/sight/{context.user_data["last_searched_sight"]}')
+      response = requests.get(f'http://localhost:8000/sight/{context.user_data["last_searched_sight"]["id"]}')
       
       if response.status_code == 200:
         all_info = response.json()
@@ -22,6 +22,7 @@ async def callbackRecognize(update: Update, context: ContextTypes.DEFAULT_TYPE):
         else:
           name, description, address, ticket_price, reach, show_map, buy_ticket, tour, no_info = "Название", "Описание", "Адрес", "Стоимость билета", "Добраться до", "Показать карту", "Купить билеты", "3D-тур", 'Нет информации'
 
+        print(f'https://2gis.kz/astana/geo/{all_info["2gis_id"]}/{all_info["2gis_coord_f"]}%2C{all_info["2gis_coord_s"]}')
         replyKeyboardMarkup = ReplyKeyboardMarkup([[KeyboardButton(tour, web_app=WebAppInfo(url=all_info['3d_tour']))],
                                               [KeyboardButton(f"{reach} {query.message.text}", request_location=True)],
                                               [KeyboardButton(show_map, web_app=WebAppInfo(url=f'https://2gis.kz/astana/geo/{all_info["2gis_id"]}/{all_info["2gis_coord_f"]}%2C{all_info["2gis_coord_s"]}'))],
